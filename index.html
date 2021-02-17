@@ -35,6 +35,36 @@
     <!-- Main stylesheet and color file-->
     <link href="proxima/assets/css/style.css" rel="stylesheet">
     <link id="color-scheme" href="proxima/assets/css/colors/default.css" rel="stylesheet">
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            background-color: #203057;
+        }
+
+        body::after {
+            content: '';
+            display: block;
+            /* height: 100px; */
+        }
+
+        .fixedfooter {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
@@ -54,13 +84,30 @@
                 </div>
                 <div class="collapse navbar-collapse" id="custom-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown" style="font-size: 14px;font-weight: 600;"><a class="" href="#"
-                                data-toggle="dropdown" style="color: #e26313;"><i class="fa fa-bell-o"
-                                    aria-hidden="true"></i> Notifications</a>
+                        <li class="dropdown" style="font-size: 14px;font-weight: 600;">
+                            <p data-toggle="dropdown" style="color: #e26313; margin-top: 13px;" id="bell"><i
+                                    class="fa fa-bell-o" aria-hidden="true"></i> Notifications</p>
+                            <div class="notifications" id="box">
+
+                                <div class="notifications-item"> <img src="https://i.imgur.com/uIgDDDd.jpg" alt="img">
+                                    <div class="text">
+                                        <h4>Samso aliao</h4>
+                                        <p>Samso Nagaro Like your home work</p>
+                                    </div>
+                                </div>
+                                <div class="notifications-item"> <img
+                                        src="https://img.icons8.com/flat_round/64/000000/vote-badge.png" alt="img">
+                                    <div class="text">
+                                        <h4>John Silvester</h4>
+                                        <p>+20 vista badge earned</p>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
 
                         <li class="dropdown" style="font-size: 14px;font-weight: 600;"><a class="" href="#"
-                                data-toggle="dropdown" style="color: #e26313;"><i class="fa fa-file-o" aria-hidden="true"></i> Docs</a>
+                                data-toggle="dropdown" style="color: #e26313;"><i class="fa fa-file-o"
+                                    aria-hidden="true"></i> Docs</a>
                         </li>
                     </ul>
                 </div>
@@ -133,8 +180,12 @@
                                         <img
                                             src="https://i.pinimg.com/originals/0e/65/d1/0e65d17c40f641015e00d2755bf2934d.png" />
                                     </span></div>
-                                <h3 class="features-title font-alt">Social Network</h3>Careful attention to detail and
-                                clean, well structured code ensures a smooth user experience for all your visitors.
+                                <h3 class="features-title font-alt">Proxima Exchange</h3>
+                                <p class="desc-font">An automated market making
+                                    (AMM) decentralized exchange (DEX) currently operates on Ethereum blockchain with
+                                    added
+                                    features like pair governance and Liquidity rward system for provider and user.
+                                </p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-4">
@@ -143,9 +194,11 @@
                                         <img
                                             src="https://i.pinimg.com/originals/0e/65/d1/0e65d17c40f641015e00d2755bf2934d.png" />
                                     </span></div>
-                                <h3 class="features-title font-alt">The Virtual Reality</h3>Careful attention to detail
-                                and
-                                clean, well structured code ensures a smooth user experience for all your visitors.
+                                <h3 class="features-title font-alt">Proxima Governance</h3>
+                                <p class="desc-font" s>Strong comminuty governance
+                                    that not only decides protocols future but gives community strength to update
+                                    protocol's
+                                    current reward mechanism.</p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4 col-lg-4">
@@ -154,8 +207,11 @@
                                         <img
                                             src="https://i.pinimg.com/originals/0e/65/d1/0e65d17c40f641015e00d2755bf2934d.png" />
                                     </span></div>
-                                <h3 class="features-title font-alt">Navigation</h3>Careful attention to detail and
-                                clean, well structured code ensures a smooth user experience for all your visitors.
+                                <h3 class="features-title font-alt">Proxima Contributed Liquidity</h3>
+                                <p class="desc-font">Provide liquiidity
+                                    on 50% discount. Provide liquidity in pxa selected pairs by adding only base token,
+                                    protocol will contribute pxa token on user behalf.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -189,7 +245,7 @@
                 </div>
             </div> -->
             <hr class="divider-d">
-            <footer class="footer bg-dark"
+            <footer class="footer bg-dark fixedfooter"
                 style="background-color: #203057; box-shadow: rgb(226 99 19 / 60%) 0px 0px 15px;">
                 <div class="container">
                     <div class="row">
@@ -234,6 +290,32 @@
     <script src="proxima/assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     <script src="proxima/assets/js/plugins.js"></script>
     <script src="proxima/assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var down = false;
+
+            $('#bell').click(function (e) {
+
+                var color = $(this).text();
+                if (down) {
+
+                    $('#box').css('height', '0px');
+                    $('#box').css('opacity', '0');
+                    down = false;
+                } else {
+
+                    $('#box').css('height', 'auto');
+                    $('#box').css('opacity', '1');
+                    down = true;
+
+                }
+
+            });
+
+        });
+    </script>
 </body>
+
 
 </html>
