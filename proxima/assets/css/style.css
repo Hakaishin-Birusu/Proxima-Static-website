@@ -1481,19 +1481,23 @@ blockquote {
 .features-item {
     margin: 20px 0;
     text-align: center;
-    border:1px solid #e26313;
-    box-shadow: rgb(226 99 19 / 60%) 0px 0px 15px;
-    padding: 30px;
+    border: 1px solid #e26313;
+    /* box-shadow: rgb(226 99 19 / 60%) 0px 0px 15px; */
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px, rgb(0 0 0 / 19%) 0px 6px 20px 0px;
+        /* background-color: #fff; */
+        padding: 30px;
     cursor: pointer;
+    color: #fff;
 }
-.features-item:hover{
-    transform: translateY(-10px) scale(1.005) translateZ(0);
-  box-shadow: rgb(226 99 19 / 60%) 0px 0px 15px;
-  transition: 1s;
 
-  /* transform: translateY(-5px) scale(1.005) translateZ(0); */
-  /* box-shadow: rgb(226 99 19 / 60%) 0px 0px 15px; */
-} 
+.features-item:hover {
+    transform: translateY(-10px) scale(1.005) translateZ(0);
+    box-shadow: rgb(226 99 19 / 60%) 0px 0px 15px;
+    transition: 1s;
+
+    /* transform: translateY(-5px) scale(1.005) translateZ(0); */
+    /* box-shadow: rgb(226 99 19 / 60%) 0px 0px 15px; */
+}
 
 
 
