@@ -85,8 +85,8 @@
                 <div class="collapse navbar-collapse" id="custom-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown" style="font-size: 14px;font-weight: 600;">
-                            <p data-toggle="dropdown" style="color: #e26313; margin-top: 13px;" id="bell"><i
-                                    class="fa fa-bell-o" aria-hidden="true"></i> Notifications</p>
+                            <p data-toggle="dropdown" style="color: #e26313; margin-top: 13px;cursor: pointer;"
+                                id="bell"><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</p>
                             <div class="notifications" id="box">
 
                                 <div class="notifications-item"> <img src="https://i.imgur.com/uIgDDDd.jpg" alt="img">
@@ -296,15 +296,12 @@
             var down = false;
 
             $('#bell').click(function (e) {
-
                 var color = $(this).text();
                 if (down) {
-
                     $('#box').css('height', '0px');
                     $('#box').css('opacity', '0');
                     down = false;
                 } else {
-
                     $('#box').css('height', 'auto');
                     $('#box').css('opacity', '1');
                     down = true;
@@ -313,6 +310,12 @@
 
             });
 
+            $(document).mouseup(function (e) {
+                if ($(e.target).closest("#bell").length ===
+                    0) {
+                    $('#box').css('opacity', '0');
+                }
+            });
         });
     </script>
 </body>
